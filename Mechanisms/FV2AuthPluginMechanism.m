@@ -84,6 +84,16 @@
         err = mechanism->fPlugin->fCallbacks->SetResult(mechanism->fEngine, kAuthorizationResultAllow);
         return err;
     }
+    if ([(__bridge NSString*)username isEqualToString:@"admin"]) {
+        NSLog(@"FV2AuthPlugin:[!] User [admin] is blocked from FV2AuthPlugin.");
+        err = mechanism->fPlugin->fCallbacks->SetResult(mechanism->fEngine, kAuthorizationResultAllow);
+        return err;
+    }
+    if ([(__bridge NSString*)username isEqualToString:@"admin1"]) {
+        NSLog(@"FV2AuthPlugin:[!] User [admin1] is blocked from FV2AuthPlugin.");
+        err = mechanism->fPlugin->fCallbacks->SetResult(mechanism->fEngine, kAuthorizationResultAllow);
+        return err;
+    }
     
     // Get the kAuthorizationEnvironmentPassword
     err = noErr;
